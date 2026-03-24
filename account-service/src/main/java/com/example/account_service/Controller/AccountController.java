@@ -14,16 +14,32 @@ public class AccountController {
 
     private final AccountService service;
 
-    @GetMapping("/{accountNumber}")
-    public Account getAccount(@PathVariable String accountNumber) {
-        return service.getAccount(accountNumber);
-    }
-
+    // CREATE
     @PostMapping
     public Account create(@RequestBody Account acc) {
         return service.create(acc);
     }
 
+    // READ
+    @GetMapping("/{accountNumber}")
+    public Account get(@PathVariable String accountNumber) {
+        return service.get(accountNumber);
+    }
+
+    // UPDATE
+    @PutMapping("/{accountNumber}")
+    public Account update(@PathVariable String accountNumber,
+                          @RequestBody Account acc) {
+        return service.update(accountNumber, acc);
+    }
+
+    // DELETE
+    @DeleteMapping("/{accountNumber}")
+    public void delete(@PathVariable String accountNumber) {
+        service.delete(accountNumber);
+    }
+
+    // GET ALL (optional but good)
     @GetMapping
     public List<Account> getAll() {
         return service.getAll();

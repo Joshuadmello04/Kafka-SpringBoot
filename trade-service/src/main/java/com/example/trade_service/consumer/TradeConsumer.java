@@ -1,12 +1,12 @@
 package com.example.trade_service.consumer;
 
-import com.example.trade_service.dto.EnrichedTradeDto;
-import com.example.trade_service.service.TradeService;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
+import com.example.trade_service.service.TradeService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
